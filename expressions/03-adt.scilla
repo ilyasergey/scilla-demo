@@ -1,0 +1,97 @@
+(*********************************************)
+(*      03. Algebraic data types             *)
+(*********************************************)
+(*  Uncomment specific code regions to try.  *)
+(*********************************************)
+(*            How to run it:                 *)
+(* $SCILLA_HOME/bin/type-checker file.scilla *)
+(* $SCILLA_HOME/bin/eval-runner  file.scilla *)
+(*********************************************)
+
+(*******************)
+(* Booleans        *)
+(*******************)
+
+(* let x = False in x *)
+
+(* Pattern matching *)
+
+(* let a = Int32 1 in *)
+(* let b = Int32 2 in *)
+(* let c = True in *)
+(* match c with *)
+(* | False => a *)
+(* | True => b *)
+(* end *)
+
+(*******************)
+(* Natural numbers *)
+(*******************)
+
+(* let z = Zero in *)
+(* let one = Succ z in *)
+(* let two = Succ one in *)
+(* two *)
+
+(* Try a library function *)
+
+(* let z = Zero in *)
+(* let one = Succ z in *)
+(* let two = Succ one in *)
+(* nat_to_int two *)
+
+(*******************)
+(*     Pairs       *)
+(*******************)
+
+(* let x = True in *)
+(* let b = False in *)
+(* let p = Pair {Bool Bool} x b in *)
+(* p *)
+
+(* let x = True in *)
+(* let y = False in *)
+(* let p = Pair {Bool Bool} x y in *)
+(* match p with *)
+(* | Pair a b => b *)
+(* end *)
+
+(*******************)
+(*     Options     *)
+(*******************)
+
+(* let n = None {Bool} in *)
+(* let t = True in *)
+(* let s = Some {Bool} t in *)
+(* match s with *)
+(* | Some z => z *)
+(* | None => False *)
+(* end *)
+
+(*******************)
+(*     Lists       *)
+(*******************)
+
+(* let n = Nil {Int32} in *)
+(* let x = Int32 1 in *)
+(* let l1 = Cons {Int32} x n *)
+(* in l1 *)
+
+(* let n = Nil {Int32} in *)
+(* let x = Int32 1 in *)
+(* let l1 = Cons {Int32} x n *)
+(* in match l1 with *)
+(* | Cons h t => h *)
+(* | Nil => Int32 2 *)
+(* end *)
+
+(* Not to self: need better completion for libs *)
+
+(* let n = Nil {Int32} in *)
+(* let x = Int32 1 in *)
+(* let l1 = Cons {Int32} x n in *)
+(* let l2 = Cons {Int32} x l1 in *)
+(* let lf = @list_length Int32 in *)
+(* lf l2 *)
+
+(* Time to write some functions... *)

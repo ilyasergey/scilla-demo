@@ -1,0 +1,59 @@
+(*********************************************)
+(*          01. Values in Scilla             *)
+(*********************************************)
+(*  Uncomment specific code regions to try.  *)
+(*********************************************)
+(*            How to run it:                 *)
+(* $SCILLA_HOME/bin/type-checker file.scilla *)
+(* $SCILLA_HOME/bin/eval-runner  file.scilla *)
+(*     Uncomment just one line at a time.    *)
+(*********************************************)
+
+
+(******************)
+(* Integer values *)
+(******************)
+
+(* Int32 0 *)
+(* Int64 42 *)
+(* Int128 -239 *)
+(* Int256 34634 *)
+
+
+
+(***************************)
+(* Unsigned integer values *)
+(***************************)
+
+(* Uint256 -1 *)
+
+(*****************)
+(* String values *)
+(*****************)
+
+(* "This is a Scilla string" *)
+
+(*****************)
+(* Byte Strings  *)
+(*****************)
+
+(* ByStr2 *)
+(* 0xfb19 *)
+
+(* ByStr32 *)
+(* 0xbe0f160d895fe4d12de4975812c2cafbbcd2e3985f2162037583c12ed320 *)
+
+
+(*****************)
+(* Block numbers *)
+(*****************)
+
+
+(* block 101 *)
+
+
+(*****************)
+(*   Messages    *)
+(*****************)
+
+(* { a : Int32 1; b : Int32 2 } *)
