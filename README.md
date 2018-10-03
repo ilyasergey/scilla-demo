@@ -1,4 +1,4 @@
-Scilla Examples and Exercises
+# Scilla Examples and Exercises
 
 ## Fun with Scilla expressions
 
