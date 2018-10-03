@@ -8,7 +8,9 @@ Check out the examples from the `expressions` folder.
 
 For type checking:
 
-```$SCILLA_HOME/bin/type-checker file.scilla```
+```
+$SCILLA_HOME/bin/type-checker file.scilla
+```
 
 For evaluation:
 
