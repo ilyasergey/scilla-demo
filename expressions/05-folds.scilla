@@ -1,0 +1,47 @@
+(*********************************************)
+(*      04. Folds and standard library       *)
+(*********************************************)
+(*  Uncomment specific code regions to try.  *)
+(*********************************************)
+(*            How to run it:                 *)
+(* $SCILLA_HOME/bin/type-checker file.scilla *)
+(* $SCILLA_HOME/bin/eval-runner  file.scilla *)
+(*********************************************)
+
+
+(*********************************)
+(*      folding over naturals    *)
+(*********************************)
+
+(* forall 'T. ('T -> Nat -> 'T) -> 'T -> Nat -> 'T *)
+(* let fold = nat_fold in fold *)
+
+(* Implementing addition on natural numbers via a fold *)
+
+(* let add_nat = *)
+(*   fun (n : Nat) => fun (m : Nat) => *)
+(*     let foldn = @nat_fold Nat in *)
+(*     let folder = *)
+(*       fun (acc : Nat) => fun (n : Nat) => Succ acc *)
+(*     in foldn folder m n *)
+(* in *)
+(* let five = Uint32 5 in     *)
+(* let six = Uint32 6 in *)
+(* let five_nat = builtin to_nat five in *)
+(* let six_nat = builtin to_nat six in *)
+(* let res = add_nat five_nat six_nat in *)
+(* res *)
+
+(* Exercise 1: implement multiplication     *)
+(* Exercise 2: implement factorial          *)
+(* Exercise 3: implement exponentiation     *)
+(* Exercise 4: implement Fibonacci numbers  *)
+(* Exercise 5: implement Euclidean division *)
+
+
+(*********************************)
+(*      folding over lists       *)
+(*********************************)
+
+(* let fold = list_foldl in fold *)
+(* let fold = list_foldr in fold *)
