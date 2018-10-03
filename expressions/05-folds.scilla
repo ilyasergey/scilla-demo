@@ -1,5 +1,5 @@
 (*********************************************)
-(*      04. Folds and standard library       *)
+(*      05. Folds and standard library       *)
 (*********************************************)
 (*  Uncomment specific code regions to try.  *)
 (*********************************************)
@@ -45,3 +45,43 @@
 
 (* let fold = list_foldl in fold *)
 (* let fold = list_foldr in fold *)
+
+(* let list_map = tfun 'A => tfun 'B => *)
+(*   fun (f : 'A -> 'B) => fun (l : List 'A) => *)
+(*   let folder = @list_foldr 'A (List 'B) in *)
+(*   let init = Nil {'B} in *)
+(*   let iter = fun (h : 'A) => fun (z : List 'B) => *)
+(*     let h1 = f h in *)
+(*     Cons {'B} h1 z  		 *)
+(* 	in folder iter init l *)
+(* in *)
+(* let map_int = @list_map Int32 Int32 in *)
+(* let two = Int32 2 in *)
+(* let double = fun (x : Int32) => builtin mul x two in *)
+(* let double_all = map_int double *)
+(* in double_all *)
+
+(* List length *)
+
+(* let list_length = *)
+(*   tfun 'A => *)
+(*   fun (l : List 'A) => *)
+(*     let folder = @list_foldr 'A Uint32 in *)
+(*     let init = Uint32 0 in *)
+(*     let iter = *)
+(*       fun (h : 'A) => *)
+(*       fun (z : Uint32) => *)
+(*         let one = Uint32 1 in *)
+(*           builtin add one z *)
+(*      in *)
+(*        folder iter init l *)
+(* in list_length *)
+
+(**************************************)
+(* Exercise 1: Implement list_append  *)
+(* Exercise 2: Implement list_reverse *)
+(**************************************)
+
+
+(* Solutions and more examples are in the standard library! *)
+
