@@ -39,3 +39,7 @@ easyrun.sh helloWorld 1
 ```
 
 will execure the first transaction on the contract `helloWorld`.
+
+## Scilla Hackton Challanges
+
+Check the [list of available tasks](./hackaton/Tasks.ml).
