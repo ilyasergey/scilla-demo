@@ -24,5 +24,18 @@ $SCILLA_HOME/bin/eval-runner  file.scilla
 
 ## Playing with Contracts
 
+From the folder `contracts`, run
 
-TBD
+```
+easyrun.sh contractName testNum
+```
+
+to execute contract `contractname` with a specific test input.
+
+For instance, running
+
+```
+easyrun.sh helloWorld 1
+```
+
+will execure the first transaction on the contract `helloWorld`.
