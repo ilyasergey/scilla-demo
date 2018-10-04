@@ -1,4 +1,4 @@
-## Possible Tasks for the Hackathon
+## Possible Tasks for the Scilla Hackathon
 
 ### Tooling Support
 
