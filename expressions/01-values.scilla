@@ -43,6 +43,12 @@
 (* ByStr32 *)
 (* 0xbe0f160d895fe4d12de4975812c2cafbbcd2e3985f2162037583c12ed320 *)
 
+(* let x = 0xbe0f160d895fe4d12de4975812c2cafbbcd2e3985f2162037583c12ed320 *)
+(* in *)
+(* let y = 0xbe0f160d895fe4d12de4975812c2cafbbcd2e3985f2162037583c12ed329 *)
+(* in *)
+(* builtin eq x y  *)
+
 
 (*****************)
 (* Block numbers *)
