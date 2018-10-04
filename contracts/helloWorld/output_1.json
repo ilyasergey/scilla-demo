@@ -1,0 +1,15 @@
+{
+  "gas_remaining": "1685",
+  "message": {
+    "_tag": "Main",
+    "_amount": "0",
+    "_accepted": "false",
+    "_recipient": "0x1234567890123456789012345678901234567890",
+    "params": [ { "vname": "code", "type": "Int32", "value": "2" } ]
+  },
+  "states": [
+    { "vname": "_balance", "type": "Uint128", "value": "0" },
+    { "vname": "welcome_msg", "type": "String", "value": "Hello World" }
+  ],
+  "events": []
+}
