@@ -30,7 +30,7 @@ From the folder `contracts`, run
 easyrun.sh contractName testNum
 ```
 
-to execute contract `contractname` with a specific test input.
+to execute contract `contractName` with a specific test input number `testNum`.
 
 For instance, running
 
