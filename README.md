@@ -42,4 +42,4 @@ will execure the first transaction on the contract `helloWorld`.
 
 ## Scilla Hackton Challanges
 
-Check the [list of available tasks](./hackaton/Tasks.ml).
+Check the [list of available tasks](https://github.com/ilyasergey/scilla-demo/blob/master/hackaton/Tasks.md).
