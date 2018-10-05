@@ -82,3 +82,15 @@
 (* let cc = comp128 f g in *)
 (* let a = Int32 42 in *)
 (* cc a  *)
+
+(* More of polymorphic functions *)
+
+(* let f = tfun 'A => fun (x : 'A) => x in *)
+(* let g = tfun 'B => fun (x : 'B) => x in *)
+(* let p = Pair {(forall 'C. 'C -> 'C) (forall 'A. 'A -> 'A)} f g in *)
+(* let s = "abc" in *)
+(* let g = match p with *)
+(*         | Pair a b => b *)
+(*         end *)
+(* in *)
+(* g *)
