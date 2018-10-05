@@ -27,7 +27,6 @@
 (* let y = Int32 2 in *)
 (* builtin eq x y *)
 
-
 (* What about incompatible types? *)
 
 (* let x = Int32 1 in *)
