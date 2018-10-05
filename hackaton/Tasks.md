@@ -23,7 +23,7 @@
 * Contract validation (user-defined validation to be run offline before deployment), implemented as static checkers in the pipeline
   * Uniformity of messages being sent (all have same fields)
   * Checking for “prodigal” contracts [give money for free](http://ilyasergey.net/papers/maian-draft.pdf).
-  * Detect if a contract can be locking money forever [(“greedy”)](http://ilyasergey.net/papers/maian-draft.pdf).
+  * Detect if a contract can be locking money forever ([“greedy”](http://ilyasergey.net/papers/maian-draft.pdf)).
 * Simple program checks
   * No transition accepts payment more than once.
   * At least one transition accepts payment.
