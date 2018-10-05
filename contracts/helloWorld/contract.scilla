@@ -39,7 +39,6 @@ transition setHello (msg : String)
   end
 end
 
-
 transition getHello ()
   r <- welcome_msg;
   accept;
