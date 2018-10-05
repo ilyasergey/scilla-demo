@@ -1,8 +1,7 @@
 # Scilla Examples and Exercises
 
-To run the demo, make sure to have the latest version of Scilla
-checker and interpreter from the development
-[repository](https://github.com/Zilliqa/scilla).
+To run the demo, build the latest version of Scilla from the
+[development repository](https://github.com/Zilliqa/scilla).
 
 ## Preliminaries
 
