@@ -59,7 +59,8 @@
 
 
 (******************************************************)
-(* Potential type unsoundness: implement the checker! *)
+(*     Maps of closures are not supported yet!        *)
+(******************************************************)
 
 (* let m = Emp Int32 (String -> String) in *)
 (* let k1 = Int32 42 in *)
