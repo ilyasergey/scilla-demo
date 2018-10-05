@@ -27,7 +27,6 @@
 * Simple program checks
   * No transition accepts payment more than once.
   * At least one transition accepts payment.
-  * No functions are stored into maps or ADTs
   * No transition invocation sends more than one message per Recipient.
   * All to the contract imported libraries are used
   * All library functions defined in the contract file are used.
