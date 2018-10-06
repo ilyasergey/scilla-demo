@@ -44,6 +44,12 @@ easyrun.sh helloWorld 1
 
 will execure the first transaction on the contract `helloWorld`.
 
+To _type-check_ the contract, run
+
+```
+$SCILLA_HOME/bin/scilla-checker contract.scilla
+```
+
 ## Scilla Hackton Challanges
 
 Check the [list of available tasks](https://github.com/ilyasergey/scilla-demo/blob/master/hackaton/Tasks.md).
