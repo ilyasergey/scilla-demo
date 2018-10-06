@@ -8,13 +8,17 @@
 (* $SCILLA_HOME/bin/eval-runner  file.scilla *)
 (*********************************************)
 
+(********************************)
 (* A simple function Int -> Int *)
+(********************************)
 
 (* let f_double = fun (x: Int32) => builtin add x x in *)
 (* let y = Int32 42 in *)
 (* f_double y y *)
 
-(* An example with Currying *)
+(****************************)
+(* An example with currying *)
+(****************************)
 
 (* let f_mul = *)
 (*   fun (x: Int32) => *)
@@ -24,7 +28,9 @@
 (* let a = Int32 3 in *)
 (* mul42 a *)
 
+(***************************)
 (* Taking a head of a list *)
+(***************************)
 
 (* let lst_head = *)
 (*   fun (l : List Int32) => *)
@@ -39,8 +45,10 @@
 (* let x = Int32 1 in *)
 (* let l1 = Cons {Int32} x n in *)
 (* lst_head l1 *)
-  
+
+(******************************)
 (* Let's make it polymorphic! *)
+(******************************)
 
 (* let list_head = *)
 (*   tfun 'A => *)
@@ -58,9 +66,13 @@
 (* let l1 = Cons {Int32} x n in *)
 (* head_int32 l1 *)
 
+(********************************************)
 (* Time to get some interesting stuff done. *)
+(********************************************)
 
+(********************)
 (* Compose function *)
+(********************)
 
 (* let comp = *)
 (*   tfun 'A => *)
@@ -83,7 +95,9 @@
 (* let a = Int32 42 in *)
 (* cc a  *)
 
+(*********************************)
 (* More of polymorphic functions *)
+(*********************************)
 
 (* let f = tfun 'A => fun (x : 'A) => x in *)
 (* let g = tfun 'B => fun (x : 'B) => x in *)

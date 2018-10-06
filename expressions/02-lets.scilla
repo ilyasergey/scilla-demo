@@ -8,7 +8,9 @@
 (* $SCILLA_HOME/bin/eval-runner  file.scilla *)
 (*********************************************)
 
+(****************************)
 (* This is a simple binding *)
+(****************************)
 
 (* let x = Int32 1 in x *)
 
@@ -16,24 +18,32 @@
 (* let y = Int32 2 in *)
 (* builtin add x y *)
 
-
+(**********************************)
 (* Where do I find all built-ins? *)
+(**********************************)
 
 (* https://github.com/Zilliqa/scilla/blob/master/src/lang/base/BuiltIns.ml#L910 *)
 
+
+(*****************)
 (* More of that: *)
+(*****************)
 
 (* let x = Int32 1 in *)
 (* let y = Int32 2 in *)
 (* builtin eq x y *)
 
+(**********************************)
 (* What about incompatible types? *)
+(**********************************)
 
 (* let x = Int32 1 in *)
 (* let y = Uint64 2 in *)
 (* builtin eq x y *)
 
+(*****************************)
 (* Let's do some conversions *)
+(*****************************)
 
 (* let x = Int32 1 in *)
 (* let y = Uint64 2 in *)

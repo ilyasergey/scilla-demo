@@ -8,12 +8,16 @@
 (* $SCILLA_HOME/bin/eval-runner  file.scilla *)
 (*********************************************)
 
+(**********************************************)
 (* Creating an empty map from Int32 to String *)
+(**********************************************)
 
 (* let m = Emp Int32 String *)
 (* in m *)
 
+(*****************************)
 (* Putting elements to a map *)
+(*****************************)
 
 (* let m = Emp Int32 String in *)
 (* let k1 = Int32 42 in *)
@@ -21,8 +25,9 @@
 (* let m1 = builtin put m k1 v1 in *)
 (* m1 *)
 
-
+(*******************************)
 (* Getting elements from a map *)
+(*******************************)
 
 (* let m = Emp Int32 String in *)
 (* let k1 = Int32 42 in *)
@@ -33,7 +38,9 @@
 (* let m2 = builtin put m1 k2 v2 in *)
 (* builtin get m2 k1 *)
 
+(****************************************)
 (* Checking if an element is in the map *)
+(****************************************)
 
 (* let m = Emp Int32 String in *)
 (* let k1 = Int32 42 in *)
@@ -44,8 +51,9 @@
 (* let m2 = builtin put m1 k2 v2 in *)
 (* builtin contains m2 k2 *)
 
-
+(***************)
 (* Map to list *)
+(***************)
 
 (* let m = Emp Int32 String in *)
 (* let k1 = Int32 42 in *)

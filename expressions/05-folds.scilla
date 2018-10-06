@@ -16,7 +16,9 @@
 (* forall 'T. ('T -> Nat -> 'T) -> 'T -> Nat -> 'T *)
 (* let fold = nat_fold in fold *)
 
+(*******************************************************)
 (* Implementing addition on natural numbers via a fold *)
+(*******************************************************)
 
 (* let add_nat = *)
 (*   fun (n : Nat) => fun (m : Nat) => *)
@@ -61,7 +63,9 @@
 (* let double_all = map_int double *)
 (* in double_all *)
 
+(***************)
 (* List length *)
+(***************)
 
 (* let list_length = *)
 (*   tfun 'A => *)
@@ -82,6 +86,7 @@
 (* Exercise 2: Implement list_reverse *)
 (**************************************)
 
-
+(************************************************************)
 (* Solutions and more examples are in the standard library! *)
+(************************************************************)
 

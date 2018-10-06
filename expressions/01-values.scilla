@@ -35,11 +35,11 @@
 (* Byte Strings  *)
 (*****************)
 
-(* ByStr2 *)
 (* 0xfb19 *)
+(* Type: ByStr2 *)
 
-(* ByStr32 *)
 (* 0xbe0f160d895fe4d12de4975812c2cafbbcd2e3985f2162037583c12ed320 *)
+(* Type: ByStr32 *)
 
 (* let x = 0xbe0f160d895fe4d12de4975812c2cafbbcd2e3985f2162037583c12ed320 *)
 (* in *)
@@ -47,14 +47,11 @@
 (* in *)
 (* builtin eq x y  *)
 
-
 (*****************)
 (* Block numbers *)
 (*****************)
 
-
 (* block 101 *)
-
 
 (*****************)
 (*   Messages    *)

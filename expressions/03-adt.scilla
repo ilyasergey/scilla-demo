@@ -14,7 +14,9 @@
 
 (* let x = False in x *)
 
+(********************)
 (* Pattern matching *)
+(********************)
 
 (* let a = Int32 1 in *)
 (* let b = Int32 2 in *)
@@ -33,7 +35,9 @@
 (* let two = Succ one in *)
 (* two *)
 
+(**************************)
 (* Try a library function *)
+(**************************)
 
 (* let z = Zero in *)
 (* let one = Succ z in *)
@@ -96,7 +100,9 @@
 (* | Nil => Int32 2 *)
 (* end *)
 
-(* Not to self: need better completion for libs *)
+(*************************************************)
+(* Note to self: need better completion for libs *)
+(*************************************************)
 
 (* let n = Nil {Int32} in *)
 (* let x = Int32 1 in *)
@@ -105,5 +111,7 @@
 (* let lf = @list_length Int32 in *)
 (* lf l2 *)
 
+(***********************************)
 (* Time to write some functions... *)
 
+(***********************************)
