@@ -25,6 +25,7 @@
   * Checking for “prodigal” contracts [give money for free](http://ilyasergey.net/papers/maian-draft.pdf)
   * Detect if a contract can be locking money forever ([“greedy”](http://ilyasergey.net/papers/maian-draft.pdf))
 * Simple program checks
+  * No integer overflows.
   * No transition accepts payment more than once.
   * At least one transition accepts payment.
   * No transition invocation sends more than one message per Recipient.
