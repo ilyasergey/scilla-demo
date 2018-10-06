@@ -50,6 +50,6 @@ To _type-check_ the contract, run
 $SCILLA_HOME/bin/scilla-checker contract.scilla
 ```
 
-## Scilla Hackton Challanges
+## Scilla Hackthon Challanges
 
 Check the [list of available tasks](https://github.com/ilyasergey/scilla-demo/blob/master/hackathon/Tasks.md).
