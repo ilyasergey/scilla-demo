@@ -52,4 +52,4 @@ $SCILLA_HOME/bin/scilla-checker contract.scilla
 
 ## Scilla Hackton Challanges
 
-Check the [list of available tasks](https://github.com/ilyasergey/scilla-demo/blob/master/hackaton/Tasks.md).
+Check the [list of available tasks](https://github.com/ilyasergey/scilla-demo/blob/master/hackathon/Tasks.md).
