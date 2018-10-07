@@ -26,7 +26,7 @@
   * Detect if a contract can be locking money forever ([“greedy”](http://ilyasergey.net/papers/maian-draft.pdf))
 * Simple program checks
   * No integer overflows.
-  * No transition accepts payment more than once.
+  * No transition accepts payment more than once (proposed solution in [scilla#265](https://github.com/Zilliqa/scilla/pull/265))
   * At least one transition accepts payment.
   * No transition invocation sends more than one message per Recipient.
   * All to the contract imported libraries are used
