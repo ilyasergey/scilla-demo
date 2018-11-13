@@ -1,0 +1,206 @@
+library Game
+
+let one = Uint32 1
+let two = Uint32 2
+let three = Uint32 3
+let rock = "rock"
+let paper = "paper"
+let scissors = "scissors"
+let tt = True
+let ff = False
+let p1_win = Some {Bool} tt
+let p2_win = Some {Bool} ff
+
+(*Debugging code*)
+let p1_win_code = Uint32 1
+let p2_win_code = Uint32 2
+
+let one_msg = 
+  fun (msg : Message) => 
+    let nil_msg = Nil {Message} in
+    Cons {Message} msg nil_msg
+
+contract Game
+(owner: ByStr20,
+p_one: ByStr20,
+p_two: ByStr20
+)
+
+(*Mutable fields*)
+field play_one : Uint32 = Uint32 0
+field play_two : Uint32 = Uint32 0
+field play_one_string : Option String = None {String}
+field play_two_string : Option String = None {String}
+field one_played : Bool = False
+field two_played : Bool = False
+(*Some True represents p1 wins, Some False represents p2 win*)
+field winner : Option Bool = None {Bool}
+
+
+(*Transitions*)
+transition play (play: String)
+    p1 <- play_one;
+    p2 <- play_two;
+    bool1 <- one_played;
+    bool2 <- two_played;
+    is_rock = builtin eq play rock; 
+    is_paper = builtin eq play paper; 
+    is_scissors = builtin eq play scissors; 
+    
+    (* Check if sender is player one *)
+    is_one = builtin eq p_one _sender;
+    match is_one with
+    | True =>
+        (*Check if player one already played*)
+        match bool1 with
+        | False =>
+            match is_rock with
+            | True =>
+                p1 = one;
+                play_one := p1
+            | False =>
+            end;
+            (*Add checks for is_paper and is_scissors*)
+            match is_paper with
+            | True =>
+                p1 = two;
+                play_one := p1
+            | False =>
+            end;
+            match is_scissors with
+            | True =>
+                p1 = three;
+                play_one := p1
+            | False =>
+            end;
+            one_played := tt;
+            e = {_eventname: "PlayedStatus" ; receipt : "Player 1 played!"};
+            event e
+        | True =>
+            e = {_eventname: "PlayedStatus" ; receipt : "You already played!"};
+            event e
+        end
+    | False =>
+        is_two = builtin eq p_two _sender;
+        match is_two with
+        | True =>
+            match bool2 with
+            | False =>
+                match is_rock with
+                | True =>
+                    p2 = one;
+                    play_two := p2
+                | False =>
+                end;
+                match is_paper with
+                | True =>
+                    p2 = two;
+                    play_two := p2
+                | False =>
+                end;
+                match is_scissors with
+                | True =>
+                    p2 = three;
+                    play_two := p2
+                | False =>
+                end;
+                two_played := tt;
+                e = {_eventname: "PlayedStatus" ; receipt : "Player 2 played!"};
+                event e
+            | True =>
+                e = {_eventname: "PlayedStatus" ; receipt : "You already played!"};
+                event e
+            end
+        end
+    | False =>
+        e = {_eventname: "PlayedStatus" ; receipt : "You are not a player!"};
+        event e
+    end
+end
+
+transition result()
+    one_bool <- one_played;
+    two_bool <- two_played;
+    match one_bool with
+    | True =>
+        match two_bool with
+        | True =>
+            p1 <- play_one;
+            p2 <- play_two;
+            (*Check if draw*)
+            is_equal = builtin eq p1 p2;
+            match is_equal with
+            | True =>
+                e = {_eventname: "Result: Draw"};
+                event e
+            | False =>
+                one_is_less = builtin lt p1 p2;
+                match one_is_less with
+                | True =>   
+                    dif = builtin sub p2 p1;
+                    by_one = builtin eq dif one;
+                    match by_one with
+                    | True =>
+                        msg = {_tag : ""; _recipient : p_two; _amount : Uint128 100; code : p2_win_code};
+                        msgs = one_msg msg;
+                        e = {_eventname : "Player 2 wins!"};
+                        event e;
+                        send msgs
+                    | False =>
+                        msg = {_tag : ""; _recipient : p_one; _amount : Uint128 100; code : p1_win_code};
+                        msgs = one_msg msg;
+                        e = {_eventname : "Player 1 wins!"};
+                        event e;
+                        send msgs
+                    end
+                | False =>
+                    dif = builtin sub p1 p2;
+                    by_one = builtin eq dif one;
+                    match by_one with
+                    | True =>
+                        msg = {_tag : ""; _recipient : p_one; _amount : Uint128 100; code : p1_win_code};
+                        msgs = one_msg msg;
+                        e = {_eventname : "Player 1 wins!"};
+                        event e;
+                        send msgs
+                    | False =>
+                        msg = {_tag : ""; _recipient : p_two; _amount : Uint128 100; code : p2_win_code};
+                        msgs = one_msg msg;
+                        e = {_eventname : "Player 2 wins!"};
+                        event e;
+                        send msgs
+                    end
+                end
+            end
+        | False =>
+            e = {_eventname : "Player 2 needs to play"};
+            event e
+        end
+    | False =>
+        e = {_eventname : "Player 1 needs to play"};
+        event e
+    end
+end
+
+transition resetGame ()
+    is_owner = builtin eq owner _sender;
+    match is_owner with
+    | True =>
+        zero = Uint32 0;
+        nil_string = None {String};
+        nil_bool = None {Bool};
+        play_one := zero;
+        play_two := zero;
+        play_one_string := nil_string;
+        play_two_string := nil_string;
+        one_played := ff;
+        two_played := ff;
+        winner := nil_bool
+    | False =>
+        (*Throw*)
+    end
+end
+
+transition addFunds ()
+    accept
+end

@@ -1,0 +1,136 @@
+library Game
+
+let one = Uint32 1
+let two = Uint32 2
+let three = Uint32 3
+let rock = "rock"
+let paper = "paper"
+let scissors = "scissors"
+let tt = True
+let ff = False
+let p1_win = Some {Bool} tt
+let p2_win = Some {Bool} ff
+
+(*Debugging code*)
+let p1_win_code = Uint32 1
+let p2_win_code = Uint32 2
+
+let one_msg = 
+  fun (msg : Message) => 
+    let nil_msg = Nil {Message} in
+    Cons {Message} msg nil_msg
+
+contract Game
+(owner: ByStr20,
+p_one: ByStr20,
+p_two: ByStr20
+)
+
+(*Mutable fields*)
+field play_one : Uint32 = Uint32 0
+field play_two : Uint32 = Uint32 0
+field play_one_string : Option String = None {String}
+field play_two_string : Option String = None {String}
+field one_played : Bool = False
+field two_played : Bool = False
+(*Some True represents p1 wins, Some False represents p2 win*)
+field winner : Option Bool = None {Bool}
+
+
+(*Transitions*)
+transition play (play: String)
+    p1 <- play_one;
+    p2 <- play_two;
+    bool1 <- one_played;
+    bool2 <- two_played;
+    is_rock = builtin eq play rock; 
+    is_paper = builtin eq play paper; 
+    is_scissors = builtin eq play scissors; 
+    
+    (* Check if sender is player one *)
+    is_one = builtin eq p_one _sender;
+    match is_one with
+    | True =>
+
+        (*Add check to see if player one has played*)
+        (*INSERT CODE HERE*)
+
+        match is_rock with
+        | True =>
+            p1 = one;
+            play_one := p1
+        | False =>
+        end;
+
+        (*Add checks for is_paper and is_scissors*)
+        (*INSERT CODE HERE*)
+
+        (*Make the player-played Bool flag True*)
+        one_played := tt;
+        e = {_eventname: "Player 1 played"};
+        event e
+    | False =>
+
+        (*Add match check if sender is player two and if player two has played*)
+        (*Duplicate matchings for is_rock, is_paper, is_scissors*)
+        (*Emit an event*)
+        (*INSERT CODE HERE*)
+        
+    end
+end
+
+transition result()
+    (*Add checks with events emitted to see if player 1 AND 2 had played their turns*)
+    (*INSERT CODE HERE*)
+    p1 <- play_one;
+    p2 <- play_two;
+    (*Check if draw*)
+    is_equal = builtin eq p1 p2;
+    match is_equal with
+    | True =>
+        e = {_eventname: "Result: Draw"};
+        event e
+    | False =>
+        one_is_less = builtin lt p1 p2;
+        match one_is_less with
+        | True =>   
+            dif = builtin sub p2 p1;
+            by_one = builtin eq dif one;
+            match by_one with
+            | True =>
+                winner := p2_win
+
+                (*Send money to p2 using send msgs*)
+                (*Add events to emit the winning player identifier*)
+                (*INSERT CODE HERE*)
+
+            | False =>
+                winner := p1_win
+
+                (*Send money to p1 using send msgs*)
+                (*Add events to emit the winning player identifier*)
+                (*INSERT CODE HERE*)
+
+            end
+        | False =>
+
+            (*Add case where one is more*)
+            (*INSERT CODE HERE*)
+
+        end
+    end
+end
+
+transition resetGame ()
+
+    (*Only owner can reset game*)
+    (*INSERT CODE HERE*)
+
+end
+
+transition addFunds ()
+
+    (*Find out how to accept money. Anyone can addFunds*)
+    (*INSERT CODE HERE*)
+
+end
