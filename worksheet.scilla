@@ -70,12 +70,13 @@ transition play (play: String)
         e = {_eventname: "Player 1 played"};
         event e
     | False =>
-        (*throw*)
+
+        (*Add match check if sender is player two and if player two has played*)
+        (*Duplicate matchings for is_rock, is_paper, is_scissors*)
+        (*Emit an event*)
+        (*INSERT CODE HERE*)
+        
     end
-
-    (* Add check if sender is player two and if player two has played*)
-    (*INSERT CODE HERE*)
-
 end
 
 transition result()
